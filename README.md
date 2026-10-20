@@ -52,7 +52,7 @@ The system integrates:
 
 ### My Contributions
 
-Kate and I contributed equally overall, with different responsibilities. I developed and reviewed code in VS Code, completed the correction pass, wrote eighteen regression checks, revised the technical report after review, and wrote the source reflection. Kate wrote the initial technical report and committed my updates.
+Kate and I contributed equally overall, with different responsibilities. I developed and reviewed code in VS Code, completed the correction pass, wrote regression checks, revised the technical report after review, and wrote the source reflection. Kate assisted in code development, wrote the initial technical report and committed my additional updates.
 
 Our shared work included duplicate removal, TF-IDF cross-validation, and cached spaCy processing. We adapted the instructor’s starter notebook through repeated exchanges and revisions. AI assistance supported implementation, debugging, and documentation.
 

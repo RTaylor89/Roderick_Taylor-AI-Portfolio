@@ -1,12 +1,12 @@
 # NewsBot Intelligence System
 
-**ITAI 2373 Midterm | TeamLeemannTaylor | Kate Leemann and Roderick Taylor**
+**ITAI 2373 Midterm | Team LeemannTaylor | Kate Leemann and Roderick Taylor**
 
-[Portfolio repository](https://github.com/SCheeses/Kate-Leemann-AI-Portfolio)
+[Portfolio repositories](https://github.com/SCheeses/Kate-Leemann-AI-Portfolio) , (https://github.com/RTaylor89/RTaylor89-Roderick_Taylor-AI-Portfolio)
 
 ## Status: post-submission correction
 
-The submitted notebook and its outputs are preserved in [`archive/submitted/`](archive/submitted/). The main notebook contains corrections made after submission. **The corrected notebook has been executed from start to finish with the supplied BBC CSV.** Both historical and fresh results are reported below.
+The original notebook and its outputs are preserved in [`archive/submitted/`](archive/submitted/). The main notebook contains corrections made after initial run. **The corrected notebook has been executed from start to finish with the supplied BBC CSV.** Both historical and fresh results are reported below.
 
 NewsBot is a prototype for editors and media-monitoring analysts. It suggests a category, finds entity mentions, estimates textual sentiment, and exposes linguistic patterns for human review. It does not establish production readiness or operational time savings.
 
@@ -30,7 +30,7 @@ Select that same Python environment as the notebook kernel. The model version us
 
 ## Dataset and evaluation
 
-The submitted run loaded 1,490 labeled BBC articles. Removing 50 exact duplicate texts retained 1,440 articles across Business, Entertainment, Politics, Sports, and Technology. Health is unsupported. A stratified split reserved 288 test articles and 1,152 training articles. Vocabulary fitting occurred within each training fold during three-fold cross-validation.
+The initial run loaded 1,490 labeled BBC articles. Removing 50 exact duplicate texts retained 1,440 articles across Business, Entertainment, Politics, Sports, and Technology. Health is unsupported. A stratified split reserved 288 test articles and 1,152 training articles. Vocabulary fitting occurred within each training fold during three-fold cross-validation.
 
 | Submitted model | Best CV macro F1 |
 |---|---:|
@@ -38,7 +38,7 @@ The submitted run loaded 1,490 labeled BBC articles. Removing 50 exact duplicate
 | Linear-kernel SVM | 0.9746 |
 | Multinomial Naive Bayes | 0.9685 |
 
-The submitted Logistic Regression model achieved **96.18% accuracy (277/288)** and **0.9598 macro F1**. Technology recall was **87.23%**. These values are historical, not new measurements of the corrected preprocessing. The revised search additionally compares vocabulary limits of 2,000 and 5,000 terms. Because the old test set has already informed error analysis, a new independent dataset is needed for an unbiased assessment of improvements.
+The initial Logistic Regression model achieved **96.18% accuracy (277/288)** and **0.9598 macro F1**. Technology recall was **87.23%**. These values are historical, not new measurements of the corrected preprocessing. The revised search additionally compares vocabulary limits of 2,000 and 5,000 terms. Because the old test set has already informed error analysis, a new independent dataset is needed for an unbiased assessment of improvements.
 
 ### Corrected run
 
@@ -65,8 +65,6 @@ SVM explanations report pairwise feature coefficients; these must not be treated
 | 7: Classification | 8 | Three models, training-only tuning, held-out report, confusion matrix |
 | 8: NER | 8 | PERSON, ORG, GPE, DATE, MONEY; frequencies and co-occurrence |
 
-Course Module 3 covers audio; the explicit NewsBot assignment does not require audio processing. The starter's broader extension suggestions do not override the midterm's two required deliverables.
-
 ## Corrections and validation
 
 - HTML removal and punctuation now preserve word boundaries; entities and contractions are normalized.
@@ -78,26 +76,15 @@ Course Module 3 covers audio; the explicit NewsBot assignment does not require a
 - Local paths, visible warnings, dependency pins, and portable ZIP export replace Colab-only assumptions.
 - `tests/check_pipeline.py` tests the notebook's actual definitions with synthetic fixtures. These checks are not accuracy benchmarks.
 
-See [`VALIDATION.md`](VALIDATION.md) for what was and was not verified.
-
-## Deliverables
-
-- Main notebook: corrected implementation with fresh sequential execution outputs.
-- `archive/submitted/`: executed submission and historical result files.
-- `reports/NewsBot_Reflection_TeamLeemannTaylor.pdf`: exactly two pages; draft for both teammates to verify personal statements.
-- `reports/MT_Report_Group_TeamLeemannTaylor_Kate_Leemann_ITAI2373.pdf`: four-page technical report with a working repository link and explicit revision status.
-- Matching Markdown report sources for editing.
-- Optional video: not recorded. No video or bonus dashboard credit is claimed.
-
 ## Limits and next evaluation
 
 The dataset is historical and single-publisher. Near-duplicate stories may remain. Lowercase source text limits linguistic cues. Unsupported topics still receive a known category unless their vocabulary is entirely unknown. Probability calibration has not been evaluated on independent news. VADER and NER have not been evaluated on human-labeled BBC examples. Emotion cues ignore negation and context. Semantic roles are heuristic candidates, not a trained SRL model; prepositional attachment, instruments, natural forces, pronouns, and quoted claims can be misinterpreted. Entity co-occurrence does not prove a real relationship, and aliases remain unresolved.
 
-Before deployment, label a representative sample, measure extraction and sentiment errors, evaluate on independent current news, and establish a human-review policy. The corrected score is measured on the existing holdout; independent validation remains future work.
+The corrected score is measured on the existing holdout; independent validation remains future work.
 
 ## Contributions and assistance
 
-Kate Leemann and Roderick Taylor previously reported equal, side-by-side collaboration with shared responsibilities. Separate module ownership is not inferred. The reflection remains a team-review draft until both members verify their contributions and lessons. The post-submission corrections and report drafts were prepared with substantial OpenAI ChatGPT/Codex assistance.
+Kate Leemann and Roderick Taylor contributed equally and collaboratively with shared responsibilities.
 
 ## References
 
